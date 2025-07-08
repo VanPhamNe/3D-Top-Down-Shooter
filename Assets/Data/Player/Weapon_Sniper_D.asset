@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfde792de9774a4abad9b3549a71df1, type: 3}
+  m_Name: Weapon_Sniper_D
+  m_EditorClassIdentifier: 
+  weaponName: AWP
+  weaponType: 4
+  shootType: 0
+  fireRate: 1.5
+  bulletPerShot: 1
+  baseSpread: 0
+  maxSpread: 0
+  spreadIncreaseRate: 0.15
+  reloadSpeed: 1
+  equipSpeed: 1.25
+  gunDistance: 25
+  cameraDistance: 6
+  burstModeBulletPerShot: 0
+  burstModeFireRate: 0
+  burstFireDelay: 0.1
+  burstModeAvaible: 0
+  burstModeActive: 0
+  bulletInMagazines: 15
+  magazineCapacity: 15
+  totalBullet: 99999
+  bulletDamage: 101

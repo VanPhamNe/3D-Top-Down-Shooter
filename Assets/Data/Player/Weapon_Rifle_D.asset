@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfde792de9774a4abad9b3549a71df1, type: 3}
+  m_Name: Weapon_Rifle_D
+  m_EditorClassIdentifier: 
+  weaponName: Phantom
+  weaponType: 2
+  shootType: 1
+  fireRate: 8
+  bulletPerShot: 1
+  baseSpread: 0.15
+  maxSpread: 3
+  spreadIncreaseRate: 0.15
+  reloadSpeed: 1.5
+  equipSpeed: 1
+  gunDistance: 25
+  cameraDistance: 5
+  burstModeBulletPerShot: 3
+  burstModeFireRate: 1.5
+  burstFireDelay: 0.1
+  burstModeAvaible: 1
+  burstModeActive: 0
+  bulletInMagazines: 40
+  magazineCapacity: 40
+  totalBullet: 99999
+  bulletDamage: 35
