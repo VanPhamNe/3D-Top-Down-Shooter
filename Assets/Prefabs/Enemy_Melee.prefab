@@ -167,7 +167,7 @@ MonoBehaviour:
   - {fileID: 5437163937421355019}
   damagePoint:
   - {fileID: 8919569319398709808}
-  attackRadius: 0.3
+  attackRadius: 0.5
 --- !u!1 &422425200940498437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   - {fileID: 5649759622685636085}
   damagePoint:
   - {fileID: 6683238901203159717}
-  attackRadius: 0.3
+  attackRadius: 0.5
 --- !u!1 &1549693895982807715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,7 +2271,7 @@ MonoBehaviour:
   - {fileID: 4257992324626796615}
   damagePoint:
   - {fileID: 4308855877061588267}
-  attackRadius: 0.3
+  attackRadius: 0.5
 --- !u!1 &2324813518923631103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2599,7 @@ MonoBehaviour:
   - {fileID: 6073629796112496376}
   damagePoint:
   - {fileID: 2002422211522808707}
-  attackRadius: 0.3
+  attackRadius: 0.5
 --- !u!1 &2990757075123206947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,7 +3672,7 @@ MonoBehaviour:
     attackName: Sword Slash
     attackDamage: 21
   meleeAttackVfx: {fileID: 4280363777030929193, guid: 311872d397c4d5d45bbf3a97a89ad6f0, type: 3}
-  meleeType: 1
+  meleeType: 0
   weaponType: 0
   shieldTransform: {fileID: 5491576583456718271}
   shieldDurability: 10
@@ -3726,7 +3726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a92d52972737f84cab0f0aa3780a2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 1000
   currentHealth: 0
 --- !u!1 &4365837339108782401
 GameObject:
@@ -6801,7 +6801,7 @@ MonoBehaviour:
   - {fileID: 6979191131445337952}
   damagePoint:
   - {fileID: 7646710053226291590}
-  attackRadius: 0.3
+  attackRadius: 0.5
 --- !u!1 &8385158015579709470
 GameObject:
   m_ObjectHideFlags: 0
