@@ -6304,21 +6304,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 284261460030960547, guid: fc97cc0205b48ac43af4798396c76fb7, type: 3}
-      propertyPath: meleeType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687107732359145295, guid: fc97cc0205b48ac43af4798396c76fb7, type: 3}
-      propertyPath: maxHealth
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 4265333554287882656, guid: fc97cc0205b48ac43af4798396c76fb7, type: 3}
       propertyPath: m_Name
       value: Enemy_Melee
-      objectReference: {fileID: 0}
-    - target: {fileID: 4265333554287882656, guid: fc97cc0205b48ac43af4798396c76fb7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
