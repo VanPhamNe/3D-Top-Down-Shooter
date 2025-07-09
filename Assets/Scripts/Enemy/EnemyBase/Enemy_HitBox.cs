@@ -12,7 +12,7 @@ public class Enemy_HitBox : HitBox
     }
     public override void TakeDamage(int damage)
     {
-        
-        enemy.GetHit(damage);
+        int newDamage = Mathf.RoundToInt(damage * damageMultiplier); // Apply damage multiplier
+        enemy.GetHit(newDamage);
     }
 }

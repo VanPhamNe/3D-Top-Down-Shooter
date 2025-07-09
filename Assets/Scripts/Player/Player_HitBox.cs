@@ -13,6 +13,7 @@ public class Player_HitBox : HitBox
     }
     public override void TakeDamage(int damage)
     {
-        player.heath.ReduceHealth(damage); // Assuming ReduceHealth is a method in Player's health management script
+        int newDamage = Mathf.RoundToInt(damage * damageMultiplier); // Apply damage multiplier
+        player.heath.ReduceHealth(newDamage); // Assuming ReduceHealth is a method in Player's health management script
     }
 }

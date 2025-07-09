@@ -218,7 +218,7 @@ public class EnemyBoss : Enemy
         Vector3 dirToPlayer = (playerPos - myPos).normalized; // Calculate the direction to the player
         if (Physics.Raycast(myPos,dirToPlayer,out RaycastHit hit,100,~whatToIgnore))
         {
-            if(hit.transform == player ||hit.transform.parent == player) // Check if the raycast hit the player or its parent
+            if(hit.transform.root == player.root) // Check if the raycast hit the player or its parent
             {
                 Debug.Log(hit.transform.name);
                 return true; // Player is in clear sight

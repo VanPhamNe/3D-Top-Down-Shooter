@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &488043371140380701
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &650805797361143449
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &919253573794482004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,6 +1114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &1425841649848043412
 GameObject:
   m_ObjectHideFlags: 0
@@ -6334,6 +6338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &2177880408078817352
 GameObject:
   m_ObjectHideFlags: 0
@@ -6543,6 +6548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &2261245396217215642
 GameObject:
   m_ObjectHideFlags: 0
@@ -6704,7 +6710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4096050640704616756
 Transform:
   m_ObjectHideFlags: 0
@@ -6776,16 +6782,19 @@ MonoBehaviour:
   attackRange: 1.7
   actionCooldown: 1
   bossWeaponType: 0
-  abilityCooldown: 5
+  abilityCooldown: 10
   minAbilityDistance: 7
   flameDuration: 7
   flameThrower: {fileID: 9108701990065720457}
-  flameDamageCooldown: 0.5
+  flameDamageCooldown: 0.25
+  flamDamage: 6
   hammerFxPrefab: {fileID: 0}
   hammerCheckRadius: 0
+  hammerDamage: 0
   timeToTarget: 1
   jumpAttackCooldown: 6
   minJumpDisRequired: 5
+  jumpAttackDamage: 25
   impactRadius: 2.5
   impactPower: 7
   upForceMultiplier: 5
@@ -6798,6 +6807,7 @@ MonoBehaviour:
   - {fileID: 5233068971554974710}
   attackRadius: 0.5
   meleeAttackFx: {fileID: 4280363777030929193, guid: fb4298d5d35887748a14e709a49b2b5b, type: 3}
+  meleeAttackDamage: 30
   bossVisuals: {fileID: 0}
 --- !u!114 &6556709648277107922
 MonoBehaviour:
@@ -6842,7 +6852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a92d52972737f84cab0f0aa3780a2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 2000
   currentHealth: 0
 --- !u!1 &2755253484720453806
 GameObject:
@@ -7352,6 +7362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1.5
 --- !u!1 &3880010024412057173
 GameObject:
   m_ObjectHideFlags: 0
@@ -7950,6 +7961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &5478874928926875046
 GameObject:
   m_ObjectHideFlags: 0
@@ -8188,6 +8200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &5663084028631375898
 GameObject:
   m_ObjectHideFlags: 0
@@ -18386,6 +18399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &7121108302060126467
 GameObject:
   m_ObjectHideFlags: 0
@@ -19008,6 +19022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75e7618179f4b54ca5793b7d89f49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!1 &8342208703380022842
 GameObject:
   m_ObjectHideFlags: 0

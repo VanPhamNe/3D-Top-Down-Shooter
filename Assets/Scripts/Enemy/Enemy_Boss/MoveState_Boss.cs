@@ -8,7 +8,7 @@ public class MoveState_Boss : EnemyState
     private EnemyBoss enemy;
     private Vector3 destination; // Destination for the enemy to move towards
     private float actionTimer;
-    private float timeBeforeSpeedUp = 15;
+    private float timeBeforeSpeedUp = 5;
     private bool isSpeedUp;
     public MoveState_Boss(Enemy enemy, EnemyStateMachine stateMachine, string boolName) : base(enemy, stateMachine, boolName)
     {
@@ -26,13 +26,6 @@ public class MoveState_Boss : EnemyState
         enemy.agent.SetDestination(destination); // Set the destination for the NavMeshAgent
     }
 
-    private void SpeedReset()
-    {
-        isSpeedUp = false; // Reset the speed-up flag
-        enemy.anim.SetFloat("MoveAnimIndex", 0);
-        enemy.agent.speed = enemy.moveSpeed; // Set the speed of the NavMeshAgent
-    }
-
     public override void Exit()
     {
         base.Exit();
@@ -47,9 +40,7 @@ public class MoveState_Boss : EnemyState
         {
             if (ShouldSpeedUp())
             {
-                enemy.agent.speed = enemy.runSpeed;
-                enemy.anim.SetFloat("MoveAnimIndex", 1); // Set the animation index for running
-                isSpeedUp = true; // Set the speed-up flag to true
+                SpeedUp();
             }
             Vector3 playerPosition = enemy.player.position; // Get the player's position
             enemy.agent.SetDestination(playerPosition); //Duoi theo player
@@ -75,6 +66,22 @@ public class MoveState_Boss : EnemyState
     
 
     }
+    private void SpeedReset()
+    {
+        isSpeedUp = false; // Reset the speed-up flag
+        enemy.anim.SetFloat("MoveAnimIndex", 0);
+        enemy.anim.SetFloat("MoveAnimSpeedMultiplier", 1); // Speed up the animation
+
+        enemy.agent.speed = enemy.moveSpeed; // Set the speed of the NavMeshAgent
+    }
+    private void SpeedUp()
+    {
+        enemy.agent.speed = enemy.runSpeed;
+        enemy.anim.SetFloat("MoveAnimIndex", 1); // Set the animation index for running
+        enemy.anim.SetFloat("MoveAnimSpeedMultiplier", 1.5f); // Speed up the animation
+        isSpeedUp = true; // Set the speed-up flag to true
+    }
+
     private void PerformRandomAction()
     {
         actionTimer = enemy.actionCooldown; // Reset the action timer

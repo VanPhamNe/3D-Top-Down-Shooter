@@ -86,7 +86,7 @@ public class BattleState_Range : EnemyState
         Vector3 dirToPlayer = enemy.player.transform.position - enemy.transform.position; // Calculate the direction to the player
         if(Physics.Raycast(enemy.transform.position,dirToPlayer,out RaycastHit hit))
         {
-            if(hit.transform == enemy.player || hit.transform.parent == enemy.player) // Check if the raycast hit the player or the player's parent (in case of a child object)
+            if(hit.transform.root == enemy.player.root) // Check if the raycast hit the player or the player's parent (in case of a child object)
             {
                 return true; // Player is in clear sight
             }

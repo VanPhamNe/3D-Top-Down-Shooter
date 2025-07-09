@@ -23,7 +23,7 @@ public class Enemy_RangeWeaponData : ScriptableObject
     public Vector3 ApplyWeaponSpread(Vector3 originalDir)
     {
         float randomSpread = Random.Range(-weaponSpread, weaponSpread); //Lay gia tri phat tan ngau nhien trong khoang -weaponSpread den weaponSpread
-        Quaternion spreadRotation = Quaternion.Euler(randomSpread, randomSpread, randomSpread); //Tao mot quaternion xoay ngau nhien trong khoang do
+        Quaternion spreadRotation = Quaternion.Euler(randomSpread, randomSpread / 2, randomSpread); //Tao mot quaternion xoay ngau nhien trong khoang do
         return spreadRotation * originalDir; //Tra ve huong dan da duoc phat tan
     }
 }
