@@ -2607,10 +2607,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5929506768169544089, guid: 9dca0abf9a754cc48b4169e078ee2f3c, type: 3}
-      propertyPath: meleeAttackDamage
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5042,10 +5038,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3991291474026106695, guid: 51212b8f361014d49a04ee3826f4aae6, type: 3}
-      propertyPath: meleeAttackDamage
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5703179165359261913, guid: 51212b8f361014d49a04ee3826f4aae6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.82
@@ -5089,10 +5081,6 @@ PrefabInstance:
     - target: {fileID: 8724735246771772506, guid: 51212b8f361014d49a04ee3826f4aae6, type: 3}
       propertyPath: m_Name
       value: Enemy_Boss_Hammer
-      objectReference: {fileID: 0}
-    - target: {fileID: 8724735246771772506, guid: 51212b8f361014d49a04ee3826f4aae6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6307,6 +6295,10 @@ PrefabInstance:
     - target: {fileID: 4265333554287882656, guid: fc97cc0205b48ac43af4798396c76fb7, type: 3}
       propertyPath: m_Name
       value: Enemy_Melee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265333554287882656, guid: fc97cc0205b48ac43af4798396c76fb7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11613,6 +11605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &4095431460082677558
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -12411,6 +12404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &5193836815732839991
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -13126,6 +13120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &6116908338661998046
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -13457,6 +13452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &6381231093208294522
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -13926,6 +13922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &6964396663578932945
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -14099,6 +14096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &6993797264381787318
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -14683,6 +14681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &7642317956813912435
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -15419,6 +15418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &8678207072659795951
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -15688,6 +15688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &8941567495813499478
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -15842,6 +15843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9799178c1232da468a9e66eee4e1f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageMultiplier: 1
 --- !u!144 &9045143082198759371
 CharacterJoint:
   m_ObjectHideFlags: 0
