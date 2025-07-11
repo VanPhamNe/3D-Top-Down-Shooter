@@ -8,7 +8,13 @@ public class LevelParts : MonoBehaviour
     [SerializeField] private LayerMask intersection;
     [SerializeField] private Collider[] intersectionCheckCollider;
     [SerializeField] private Transform intersectionCheckParent;
-
+    private void Start()
+    {
+        if(intersectionCheckCollider.Length <= 0)
+        {
+            intersectionCheckCollider = intersectionCheckParent.GetComponentsInChildren<Collider>();
+        }
+    }
     public bool IntersectionDetect()
     {
         Physics.SyncTransforms(); // Ensure all transforms are updated before checking for intersection
