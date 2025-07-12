@@ -22,6 +22,7 @@ public class Interacable : MonoBehaviour
     //Khi nguoi choi va cham doi tuong nay thi no se duoc them vao danh sach interactables cua PlayerInteraction
     protected virtual void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("OnTriggerEnter: " + other.gameObject.name);
         if (playerWeaponController == null)
         {
             playerWeaponController = other.GetComponent<PlayerWeaponController>();
@@ -37,6 +38,7 @@ public class Interacable : MonoBehaviour
     //Khi nguoi choi roi khoi doi tuong nay thi no se bi xoa khoi danh sach interactables cua PlayerInteraction
     protected virtual void OnTriggerExit(Collider other)
     {
+        //Debug.Log("OnTriggerExit: " + other.gameObject.name);
         PlayerInteraction playerInteraction = other.GetComponent<PlayerInteraction>();
         if (playerInteraction == null)
         {
