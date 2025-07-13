@@ -3656,7 +3656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   turnSpeed: 5
-  aggressiveRange: 4
+  aggressiveRange: 10
   whatIsAlly:
     serializedVersion: 2
     m_Bits: 2048
@@ -3693,7 +3693,7 @@ MonoBehaviour:
     attackName: Sword Slash
     attackDamage: 21
   meleeAttackVfx: {fileID: 4280363777030929193, guid: 311872d397c4d5d45bbf3a97a89ad6f0, type: 3}
-  meleeType: 2
+  meleeType: 0
   weaponType: 0
   shieldTransform: {fileID: 5491576583456718271}
   shieldDurability: 400

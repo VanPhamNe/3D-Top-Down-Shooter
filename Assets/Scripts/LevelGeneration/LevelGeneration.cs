@@ -1,22 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour
 {
+    //Enemy
+    private List<Enemy> enemyList;
+    //NavMesh
+    [SerializeField] private NavMeshSurface navMeshSurface; //NavMeshSurface de cap nhat navmesh khi sinh ra cac manh moi
+    [Space]
+    //Level Part
     [SerializeField] private List<Transform> levelParts; //Danh sach cac prefab phan cua level
     private List<Transform> currentLevelParts; // Danh sach ban sao cua levelParts de khong anh huong toi levelParts goc
     [SerializeField] private Transform lastLevel; // Phan cuoi cung cua level, phan nay se duoc sinh ra khi khong con phan nao trong currentLevelParts
+
+    //Snap Point
     [SerializeField] private SnapPoint nextSnapPoint;
     [SerializeField] private List<Transform> generatedParts = new List<Transform>();
     private SnapPoint defaultSnapPoint;
+
+    //Cooldown and generation control
     [Space]
     [SerializeField] private float generationCooldown;
     private float cooldownTimer;
     private bool generationOver;
     private void Start()
     {
-      
+      enemyList = new List<Enemy>();
         defaultSnapPoint = nextSnapPoint; 
         InitalizeLevelParts();
     }
@@ -43,6 +54,12 @@ public class LevelGeneration : MonoBehaviour
     {
         generationOver = true;
         GenerateNextLevel();
+        navMeshSurface.BuildNavMesh(); //Cap nhat NavMesh khi sinh xong level
+        foreach (Enemy enemy in enemyList) //Duyet qua danh sach enemy va bat dau che do chien dau
+        {
+            enemy.transform.parent = null;
+            enemy.gameObject.SetActive(true); //Kich hoat enemy sau khi sinh xong level
+        }
     }
 
     [ContextMenu("Generate Level")]
@@ -68,6 +85,7 @@ public class LevelGeneration : MonoBehaviour
 
         }
         nextSnapPoint = levelPart.GetExitSnapPoint(); //Cap nhat snap point tiep theo de sinh ra manh tiep theo
+        enemyList.AddRange(levelPart.AllEnemy()); //Lay danh sach enemy trong manh moi sinh ra
     }
     [ContextMenu("Reset Level Generation")]
     private void InitalizeLevelParts()
@@ -80,11 +98,15 @@ public class LevelGeneration : MonoBehaviour
 
     private void DestroyOldLevelPart()
     {
+        foreach (Enemy enemy in enemyList) {
+            Destroy(enemy.gameObject); //Huy tat ca enemy da sinh ra truoc do
+        }
         foreach (Transform part in generatedParts) // Huy toan bo cac level part cu 
         {
             Destroy(part.gameObject);
         }
         generatedParts = new List<Transform>(); //khoi tao lai danh sach
+        enemyList = new List<Enemy>(); //Xoa danh sach enemy cu
     }
 
     private Transform ChooseRandomPart()

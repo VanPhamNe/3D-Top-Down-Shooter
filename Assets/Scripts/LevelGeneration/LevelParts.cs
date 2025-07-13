@@ -86,4 +86,5 @@ public class LevelParts : MonoBehaviour
         transform.Rotate(0, 180, 0);
         transform.Rotate(0, -rotationOffset, 0);
     }
+    public Enemy[] AllEnemy() => GetComponentsInChildren<Enemy>(true); //Lay tat ca Enemy trong manh nay, bao gom ca Enemy bi an
 }

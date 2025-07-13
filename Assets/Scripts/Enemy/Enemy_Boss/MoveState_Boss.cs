@@ -57,7 +57,7 @@ public class MoveState_Boss : EnemyState
         }
         else
         {
-            if (Vector3.Distance(enemy.transform.position,destination) < .25f)
+            if (enemy.agent.remainingDistance <= enemy.agent.stoppingDistance + 0.05f)
             {
                 stateMachine.ChangeState(enemy.idleState); // Change to idle state when the destination is reached
 
