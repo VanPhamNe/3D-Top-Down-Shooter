@@ -19,6 +19,7 @@ public class MissionManager : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log("MissionManager Update");
         currentMission?.UpdateMission(); // Cap nhat nhiem vu hien tai neu co
     }
     private void StartMission() => currentMission.StartMission(); // Bat dau nhiem vu hien tai neu co
