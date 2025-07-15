@@ -7,6 +7,7 @@ public class LevelGeneration : MonoBehaviour
 {
     //Enemy
     private List<Enemy> enemyList;
+    public static LevelGeneration Instance;
     //NavMesh
     [SerializeField] private NavMeshSurface navMeshSurface; //NavMeshSurface de cap nhat navmesh khi sinh ra cac manh moi
     [Space]
@@ -25,10 +26,15 @@ public class LevelGeneration : MonoBehaviour
     [SerializeField] private float generationCooldown;
     private float cooldownTimer;
     private bool generationOver;
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
       enemyList = new List<Enemy>();
         defaultSnapPoint = nextSnapPoint; 
+
         InitalizeLevelParts();
     }
     private void Update()
@@ -115,6 +121,10 @@ public class LevelGeneration : MonoBehaviour
         Transform choosenPart = currentLevelParts[randomIndex];
         currentLevelParts.RemoveAt(randomIndex);
         return choosenPart;
+    }
+    public List<Enemy> getEnemyList() //Tra ve danh sach enemy hien tai
+    {
+        return enemyList;
     }
     //Tong ket: bat dau goi ham initializeLevelParts() de khoi tao snap point mac dinh -> moi vai giay goi generation -> snap + xoay align lai cac manh ->neu het thi goi toi part last level -> neu cac part va cham vao nhau trong qua trinh init thi reset lai
 }

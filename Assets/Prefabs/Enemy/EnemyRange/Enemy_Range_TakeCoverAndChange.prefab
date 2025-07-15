@@ -3420,6 +3420,7 @@ MonoBehaviour:
   health: 10
   turnSpeed: 5
   aggressiveRange: 15
+  enemyType: 1
   whatIsAlly:
     serializedVersion: 2
     m_Bits: 0

@@ -27,6 +27,28 @@ public class ChaseState_Melee : EnemyState
     public override void Update()
     {
         base.Update();
+        float distanceToPlayer = Vector3.Distance(enemy.transform.position, enemy.player.position);
+        float maxChaseRange = 10f;
+
+        
+        if (enemy.inBattleMode && distanceToPlayer > maxChaseRange)
+        {
+            enemy.ExitBattleMode();
+
+           
+            enemy.agent.destination = enemy.initialPosition;
+            enemy.agent.speed = enemy.moveSpeed;
+
+            
+            if (Vector3.Distance(enemy.transform.position, enemy.initialPosition) < 0.5f)
+            { 
+                enemy.agent.isStopped = true;
+                stateMachine.ChangeState(enemy.moveState);
+            }
+
+            return;
+        }
+
         if (enemy.IsPlayerInAttackRange())
         {
             Debug.Log("Player in attack range, switching to attack state.");
@@ -36,6 +58,7 @@ public class ChaseState_Melee : EnemyState
         if (CanUpdateDestination())
         {
             enemy.agent.destination = enemy.player.position; // Update the destination to the player's position
+
         }
     }
     private bool CanUpdateDestination()

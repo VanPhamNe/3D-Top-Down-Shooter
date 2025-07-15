@@ -14,7 +14,7 @@ public class MissionManager : MonoBehaviour
     {
         if (currentMission != null)
         {
-            StartMission(); // Bat dau nhiem vu neu co
+            Invoke(nameof(StartMission), 2); // Bat dau nhiem vu hien tai neu co
         }
     }
     private void Update()

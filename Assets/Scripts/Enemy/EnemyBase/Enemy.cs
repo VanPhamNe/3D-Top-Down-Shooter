@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+public enum EnemyType { Melee,Range,Boss }
 [RequireComponent(typeof(NavMeshAgent))] // Yeu cau Enemy phai co NavMeshAgent de di chuyen tren map va cac script con se tu dong tao NavMeshAgent
 public class Enemy : MonoBehaviour
 {
    public int health = 25; // Suc khoe cua Enemy
     public float turnSpeed; // toc do xoay cua Enemy
     public float aggressiveRange; // khoang cach Enemy co the tan cong toi Player
+    public EnemyType enemyType; // Kieu Enemy, co the la Melee, Range hoac Boss
+    public Vector3 initialPosition;
+
     public bool inBattleMode { get; private set; }
     public LayerMask whatIsAlly;
     public LayerMask whatIsPlayer; // LayerMask de Enemy co the tan cong toi Player
@@ -52,6 +56,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+
         InitizalizePatrolPoints();
 
     }
@@ -123,8 +128,12 @@ public class Enemy : MonoBehaviour
    
     public virtual void EnterBattleMode()
     {
+        initialPosition = transform.position; // Luu vi tri ban dau cua Enemy khi bat dau che do chien dau
         inBattleMode = true; // Bat dau che do chien dau
-  
+    }
+    public virtual void ExitBattleMode()
+    {
+        inBattleMode = false; // Bat dau che do chien dau
     }
     protected bool ShouldEnterBattleMode()
     {
@@ -173,7 +182,8 @@ public class Enemy : MonoBehaviour
     }
     public virtual void Death()
     {
-       
+        MissionObjectHuntTarget huntTarget = GetComponent<MissionObjectHuntTarget>(); // Kiem tra xem Enemy co la muc tieu cua nhiem vu hay khong   
+        huntTarget?.InvokeInTargetKill(); // Neu Enemy la muc tieu cua nhiem vu, goi ham InvokeInTargetKill de thong bao nhiem vu da hoan thanh
     }
     public virtual void HitImpact(Vector3 force, Vector3 hitPoint, Rigidbody rb)
     {

@@ -15,6 +15,8 @@ public class MoveState_Melee : EnemyState
     public override void Enter()
     {
         base.Enter();
+        enemy.agent.isStopped = false; // Ensure the NavMeshAgent is not stopped when entering the move state
+
         destination = enemy.GetPatrolDestination(); // Get the next patrol point as the destination
         enemy.agent.speed = enemy.moveSpeed; // Set the speed of the NavMeshAgent
         enemy.agent.SetDestination(destination); // Set the destination for the NavMeshAgent

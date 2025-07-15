@@ -32,7 +32,25 @@ public class AdvancePlayer_Range : EnemyState
         enemy.UpdateAimPos();
         enemy.agent.SetDestination(playerPos); // Set the destination to the player's position
         enemy.FaceTarget(enemy.agent.steeringTarget);
-        if(canEnterBattleState())
+        float distanceToPlayer = Vector3.Distance(enemy.transform.position, enemy.player.position);
+        float maxChaseRange = 25f;
+        if (distanceToPlayer > maxChaseRange)
+        {
+            // Player ?ã r?i xa quá, quay l?i v? trí c?
+            enemy.ExitBattleMode(); // n?u b?n có
+
+            enemy.agent.SetDestination(enemy.initialPosition);
+            enemy.agent.speed = enemy.moveSpeed;
+
+            if (Vector3.Distance(enemy.transform.position, enemy.initialPosition) < 0.5f)
+            {
+                enemy.agent.isStopped = true;
+                stateMachine.ChangeState(enemy.idleState); // ho?c tr?ng thái khác phù h?p
+            }
+
+            return;
+        }
+        if (canEnterBattleState())
         {
             enemy.stateMachine.ChangeState(enemy.battleState); // Change to battle state when the player is within stop distance
         }

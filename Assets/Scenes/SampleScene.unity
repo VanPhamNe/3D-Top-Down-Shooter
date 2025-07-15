@@ -3415,8 +3415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshSurface: {fileID: 2107783063}
-  levelParts:
-  - {fileID: 8497297395678934823, guid: 826bed76182e25d4aba233dd47efe942, type: 3}
+  levelParts: []
   lastLevel: {fileID: 903093630725570917, guid: 98e6583f79fb82446b200ef8192e8331, type: 3}
   nextSnapPoint: {fileID: 8855477028972162192}
   generatedParts: []
@@ -4960,7 +4959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce27ee9212417345a5fc499727dc41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMission: {fileID: 0}
+  currentMission: {fileID: 11400000, guid: dacf03cef9e4da84585953f1e3ed9e52, type: 2}
 --- !u!4 &2096152296
 Transform:
   m_ObjectHideFlags: 0

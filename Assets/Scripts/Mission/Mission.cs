@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Mission : ScriptableObject
 {
     public string missionName; // Ten nhiem vu
+    [TextArea]
     public string missionDescription; // Mo ta nhiem vu
     public abstract void StartMission(); // Bat dau nhiem vu
     public abstract bool IsMissionComplete(); // Kiem tra xem nhiem vu da hoan thanh chua

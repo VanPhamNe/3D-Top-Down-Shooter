@@ -36,8 +36,28 @@ public class MoveState_Boss : EnemyState
         base.Update();
         actionTimer -= Time.deltaTime; // Decrease the action timer
         enemy.transform.rotation = enemy.FaceTarget(enemy.agent.steeringTarget); // Rotate the enemy to face the destination
+        float distanceToPlayer = Vector3.Distance(enemy.transform.position, enemy.player.position);
+        float maxChaseRange = 15f;
+
         if (enemy.inBattleMode)
         {
+            if (distanceToPlayer > maxChaseRange)
+            {
+                // Player ?ã r?i xa quá, quay l?i v? trí c?
+                enemy.ExitBattleMode(); // n?u b?n có
+
+                enemy.agent.SetDestination(enemy.initialPosition);
+                enemy.agent.speed = enemy.moveSpeed;
+
+                if (Vector3.Distance(enemy.transform.position, enemy.initialPosition) < 0.5f)
+                {
+                    enemy.agent.isStopped = true;
+                    stateMachine.ChangeState(enemy.idleState); // ho?c tr?ng thái khác phù h?p
+                }
+
+                return;
+            }
+
             if (ShouldSpeedUp())
             {
                 SpeedUp();
@@ -62,8 +82,9 @@ public class MoveState_Boss : EnemyState
                 stateMachine.ChangeState(enemy.idleState); // Change to idle state when the destination is reached
 
             }
+
         }
-    
+
 
     }
     private void SpeedReset()
