@@ -27,6 +27,7 @@ public class PickupHeal : Interacable
             playerHealth.IncreaseHealth(healAmount);
             
         }
+        UI.Instance.ingameUI.UpdateHeathUI(playerHealth.currentHealth, playerHealth.maxHealth); // Cap nhat giao dien UI khi nhan vat nhan duoc suc khoe
         Destroy(gameObject); //Xoa doi tuong sau khi nhan vat nhan vat da nhan duoc suc khoe
 
     }

@@ -40,4 +40,7 @@ public class WeaponData : ScriptableObject
 
     [Header("bullet info")]
     public int bulletDamage; // Luong sat thuong cua dan
+
+    [Header("UI")]
+    public Sprite weaponIcon; //Hinh anh cua vu khi
 }

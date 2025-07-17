@@ -48,7 +48,10 @@ public class PlayerWeaponController : MonoBehaviour
         //    currentWeapon.ToggleBurst();
         //}
     }
-
+    public void UpdateWeaponUI()
+    {
+        UI.Instance.ingameUI.UpdateWeaponUI(weaponSlot, currentWeapon); // Cap nhat giao dien vu khi
+    }
     private void InputEvents()
     {
         PlayerControls playerControls = player.controls; // Lay tham chieu den PlayerControls script
@@ -91,6 +94,7 @@ public class PlayerWeaponController : MonoBehaviour
         //player.weaponVisual.SwitchGunOff(); // Tat model vu khi hien tai
         player.weaponVisual.PlayerEquipWeaponAnimation(); // Choi animation khi nguoi choi chon vu khi
         CameraManager.Instance.ChangeCameraDistance(currentWeapon.cameraDistance); // Thay doi khoang cach camera toi vu khi moi
+        UpdateWeaponUI(); // Cap nhat giao dien vu khi
     }
     private void DropWeapon()
     {
@@ -129,6 +133,7 @@ public class PlayerWeaponController : MonoBehaviour
         
         weaponSlot.Add(newweapon); // Them vu khi moi vao kho vu khi
         player.weaponVisual.SwitchOnBackupWeaponModels(); // Bat model vu khi backup
+        UpdateWeaponUI(); // Cap nhat giao dien vu khi
 
     }
     private void EquipStartingWeapon()
@@ -183,6 +188,7 @@ public class PlayerWeaponController : MonoBehaviour
     private void FireSingleBullet()
     {
         currentWeapon.bulletInMagazines--; // Giam so luong dan trong hop dan di 1 khi ban thanh cong
+        UpdateWeaponUI(); // Cap nhat giao dien vu khi
         GameObject newBullet = ObjectPooling.Instance.GetObject(bulletPrefab,GetGunPoint()); // Lay dan tu ObjectPooling
         //Instantiate(bulletPrefab, gunPoint.position, Quaternion.LookRotation(gunPoint.forward)); // Tao dan moi tai vi tri gunPoint
         //newBullet.transform.position = GetGunPoint().position; // Dat vi tri cua dan moi bang vi tri cua gunPoint

@@ -67,7 +67,7 @@ public class Mission_Hunt : Mission
     {
         foreach (var req in killRequirements)
         {
-            req.killedCount = 0; 
+            req.killedCount = 0;
         }
         MissionObjectHuntTarget.OnTargetKilled += TargetEliminated;
 
@@ -90,6 +90,22 @@ public class Mission_Hunt : Mission
                 validEnemies.RemoveAt(randomIndex);
             }
         }
+        GetEnemyKillUI();
+
+    }
+
+    private void GetEnemyKillUI()
+    {
+        string missionText = "Tieu diet muc tieu";
+        string description = "";
+        foreach (var req in killRequirements)
+        {
+            description += req.enemyType + ": " + req.killedCount + "/" + req.amountToKill + " | ";
+          
+        }
+        description = description.TrimEnd(' ', '|');
+
+        UI.Instance.ingameUI.UpdateMissionInfo(missionText, description);
     }
 
     public override bool IsMissionComplete()
@@ -116,6 +132,7 @@ public class Mission_Hunt : Mission
         {
             MissionObjectHuntTarget.OnTargetKilled -= TargetEliminated;
         }
+        GetEnemyKillUI();
     }
 
 }

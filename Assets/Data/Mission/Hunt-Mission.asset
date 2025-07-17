@@ -15,12 +15,6 @@ MonoBehaviour:
   missionName: 
   missionDescription: 
   killRequirements:
-  - enemyType: 0
-    amountToKill: 1
-    killedCount: 0
-  - enemyType: 1
-    amountToKill: 1
-    killedCount: 1
   - enemyType: 2
     amountToKill: 1
     killedCount: 0

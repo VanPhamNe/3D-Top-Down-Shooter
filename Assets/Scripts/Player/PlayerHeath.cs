@@ -19,6 +19,7 @@ public class PlayerHeath : HeathController
         {
             Die();
         }
+        UI.Instance.ingameUI.UpdateHeathUI(currentHealth, maxHealth); // Cap nhat giao dien UI khi bi thuong
     }
     private void Die() { 
         isDead = true; // Dat isDead la true khi chet

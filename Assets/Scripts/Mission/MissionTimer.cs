@@ -21,7 +21,10 @@ public class MissionTimer : Mission
             Debug.Log("GAME OVER");
         }
         string timeText = System.TimeSpan.FromSeconds(currentTime).ToString(@"mm\:ss"); // Chuyen doi thoi gian con lai sang dinh dang mm:ss
-        Debug.Log(timeText);
+        //Debug.Log(timeText);
+        string missionText = "Chay ngay di";
+        string missionDescription = "Thoi gian con lai: " + timeText;
+        UI.Instance.ingameUI.UpdateMissionInfo(missionText, missionDescription); // Cap nhat thong tin nhiem vu tren giao dien nguoi dung
     }
     public override bool IsMissionComplete()
     {
