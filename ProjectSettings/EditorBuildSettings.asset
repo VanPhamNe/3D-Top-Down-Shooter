@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HuntLevel.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/TimeLevel.unity
+    guid: 2f5d2e88e4228f642bcff92a02f71b23
   m_configObjects: {}
