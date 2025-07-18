@@ -12,10 +12,11 @@ public class MissionManager : MonoBehaviour
     }
     private void Start()
     {
-        if (currentMission != null)
-        {
-            Invoke(nameof(StartMission), 2); // Bat dau nhiem vu hien tai neu co
-        }
+        //if (currentMission != null)
+        //{
+        //    Invoke(nameof(StartMission), 2); // Bat dau nhiem vu hien tai neu co
+        //}
+        StartMission(); // Bat dau nhiem vu hien tai neu co
     }
     private void Update()
     {

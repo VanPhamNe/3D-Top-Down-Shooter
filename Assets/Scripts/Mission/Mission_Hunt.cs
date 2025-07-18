@@ -34,8 +34,8 @@ public class Mission_Hunt : Mission
     //            }
     //        }
     //    }
-        
-   
+
+
 
     //    for (int i = 0; i < amountToKill; i++)
     //    {
@@ -60,7 +60,7 @@ public class Mission_Hunt : Mission
     //        MissionObjectHuntTarget.OnTargetKilled -= TargetEliminated; // Huy dang ky su kien khi nhiem vu hoan thanh
     //    }
     //}
-    
+
     public EnemyKillRequirement[] killRequirements; 
 
     public override void StartMission()

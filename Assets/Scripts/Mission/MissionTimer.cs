@@ -7,13 +7,20 @@ public class MissionTimer : Mission
 {
     public float time;
     private float currentTime;
+    private bool isStarted = false;
+   
+
     public override void StartMission()
     {
         currentTime = time; // Khoi tao thoi gian con lai
+        isStarted = true;
+
     }
     public override void UpdateMission()
     {
-       
+        if (!isStarted) return;
+
+
         currentTime -= Time.deltaTime; // Giam thoi gian con lai
         
         if(currentTime < 0)
@@ -30,6 +37,6 @@ public class MissionTimer : Mission
     {
         return currentTime > 0;
     }
-
    
+
 }
