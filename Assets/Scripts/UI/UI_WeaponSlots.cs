@@ -25,7 +25,7 @@ public class UI_WeaponSlots : MonoBehaviour
         weaponIcon.color = newColor;
         weaponIcon.sprite = myWeapon.weaponData.weaponIcon;
         ammoText.text = myWeapon.bulletInMagazines + "/" + myWeapon.totalBullet;
-
+        ammoText.color = Color.white;
 
     }
 }
