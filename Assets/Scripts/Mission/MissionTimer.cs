@@ -25,7 +25,9 @@ public class MissionTimer : Mission
         
         if(currentTime < 0)
         {
-            Debug.Log("GAME OVER");
+            GameManager.instance.GameOver(); // Neu thoi gian con lai nho hon 0, ket thuc tro choi
+            ControlsController.Instance.SwitchToUIControls(); // Disable controls when showing Game Over UI
+            Time.timeScale = 0f; // Pause the game when showing Game Over UI
         }
         string timeText = System.TimeSpan.FromSeconds(currentTime).ToString(@"mm\:ss"); // Chuyen doi thoi gian con lai sang dinh dang mm:ss
         //Debug.Log(timeText);

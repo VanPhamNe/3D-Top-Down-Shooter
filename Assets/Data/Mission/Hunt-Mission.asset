@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5fd2cc0b8832448a694f2d6bbcfb98, type: 3}
   m_Name: Hunt-Mission
   m_EditorClassIdentifier: 
-  missionName: 
-  missionDescription: 
+  missionName: Hunt Enemy
+  missionDescription: ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
   killRequirements:
   - enemyType: 0
     amountToKill: 2

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217b97d89a17a7f4793519892278578b, type: 3}
   m_Name: Timer-Mission
   m_EditorClassIdentifier: 
-  missionName: Chay Ngay Di
-  missionDescription: aaaa
-  time: 150
+  missionName: Run For Life
+  missionDescription: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  time: 2

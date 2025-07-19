@@ -38,6 +38,10 @@ public class PlayerAim : MonoBehaviour
         {
             return;
         }
+        if(player.controlsEnabled == false) // neu controls khong duoc kich hoat thi khong cho aim
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.P))
         {
             AimPrecision = !AimPrecision;

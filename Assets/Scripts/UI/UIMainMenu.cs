@@ -16,11 +16,13 @@ public class UIMainMenu : MonoBehaviour
     public void ChangeToHuntLevel()
     {
         GameManager.instance.LoadScene("HuntLevel");
+        Time.timeScale = 1f; // Reset time scale to normal before switching scenes
     }
 
     public void ChangeToTimeLevel()
     {
         GameManager.instance.LoadScene("TimeLevel");
+        Time.timeScale = 1f; // Reset time scale to normal before switching scenes
     }
 
 }

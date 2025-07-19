@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public PlayerHeath heath { get; private set; } //read only khong thay doi gia tri
     public Ragdoll ragdoll { get; private set; } //read only khong thay doi gia tri
     public Animator animator { get; private set; } //read only khong thay doi gia tri
+    public bool controlsEnabled { get; private set; } //kiem soat xem controls co duoc kich hoat hay khong
     private void Awake()
     {
         controls = new PlayerControls();
@@ -29,10 +30,15 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         controls.Enable();
+        controls.Character.UIPause.performed += ctx => UI.Instance.PauseSwitch(); //Dang ky su kien khi nhan nut UIPause
     }
     private void OnDisable()
     {
         controls.Disable();
+    }
+    public void SetControlsEnableTo(bool enable)
+    {
+        controlsEnabled = enable; //cap nhat gia tri controlsEnabled
     }
 
 }
