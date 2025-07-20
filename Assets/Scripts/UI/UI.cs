@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class UI : MonoBehaviour
     public GameObject pauseUI;
     public GameObject[] uiElements;
     public UI_GameOver gameOverUI;
+    [SerializeField] private Image fadeimage;
+    public GameObject victorySceneUI;
+
     private void Awake()
     {
         Instance = this;
@@ -19,6 +23,7 @@ public class UI : MonoBehaviour
     {
         Time.timeScale = 1f; // Ensure the game starts with normal time scale
         AssignUI(); // Assign UI controls
+        StartCoroutine(ChangeImageAlpha(0, 1.5f, null));
     }
     public void SwitchTo(GameObject gameObject)
     {
@@ -65,6 +70,32 @@ public class UI : MonoBehaviour
         SwitchTo(gameOverUI.gameObject); // Switch to the Game Over UI
         gameOverUI.UpdateGameOverText(message);
 
+    }
+    private IEnumerator ChangeImageAlpha(float targetAlpha, float duration, System.Action onComplete)
+    {
+        float time = 0;
+        Color currentColor = fadeimage.color;
+        float startAlpha = currentColor.a;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            float alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration);
+            fadeimage.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
+            yield return null;
+        }
+        fadeimage.color = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
+        onComplete?.Invoke();
+    }
+    public void ShowVictoryScene()
+    {
+        StartCoroutine(ChangeImageAlpha(1, 1.5f, SwitchToVictoryScene));
+    }
+    public void SwitchToVictoryScene()
+    {
+        SwitchTo(victorySceneUI);
+        Color color = fadeimage.color;
+        color.a = 0;
+        fadeimage.color = color;
     }
 
 }

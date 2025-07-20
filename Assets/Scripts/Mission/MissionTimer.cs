@@ -8,7 +8,9 @@ public class MissionTimer : Mission
     public float time;
     private float currentTime;
     private bool isStarted = false;
-   
+
+
+
 
     public override void StartMission()
     {
@@ -18,12 +20,12 @@ public class MissionTimer : Mission
     }
     public override void UpdateMission()
     {
-        if (!isStarted) return;
+        if (!isStarted || GameManager.instance.isGameComplete) return;
 
 
         currentTime -= Time.deltaTime; // Giam thoi gian con lai
-        
-        if(currentTime < 0)
+
+        if (currentTime <= 0)
         {
             GameManager.instance.GameOver(); // Neu thoi gian con lai nho hon 0, ket thuc tro choi
             ControlsController.Instance.SwitchToUIControls(); // Disable controls when showing Game Over UI
