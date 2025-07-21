@@ -55,6 +55,10 @@ public class UI : MonoBehaviour
         Time.timeScale = 1f; // Reset time scale to normal before switching scenes
         GameManager.instance.LoadScene("MainMenu");
     }
+    public void GoToEndScene()
+    {
+        GameManager.instance.LoadScene("TheEnd");
+    }
     public void RestartLevel()
     {
         GameManager.instance.RestartScene(); // Restart the current level
@@ -92,10 +96,7 @@ public class UI : MonoBehaviour
     }
     public void SwitchToVictoryScene()
     {
-        SwitchTo(victorySceneUI);
-        Color color = fadeimage.color;
-        color.a = 0;
-        fadeimage.color = color;
+        GoToEndScene();
     }
 
 }

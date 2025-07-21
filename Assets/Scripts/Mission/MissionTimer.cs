@@ -20,7 +20,10 @@ public class MissionTimer : Mission
     }
     public override void UpdateMission()
     {
-        if (!isStarted || GameManager.instance.isGameComplete) return;
+        if (!isStarted || GameManager.instance.isGameComplete)
+        {
+            return;
+        }
 
 
         currentTime -= Time.deltaTime; // Giam thoi gian con lai

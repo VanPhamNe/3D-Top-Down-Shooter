@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimeLevel.unity
     guid: 2f5d2e88e4228f642bcff92a02f71b23
+  - enabled: 1
+    path: Assets/Scenes/TheEnd.unity
+    guid: 94df7c030d157af4b89e604bba6b24a5
   m_configObjects: {}

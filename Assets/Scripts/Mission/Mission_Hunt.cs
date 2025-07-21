@@ -65,6 +65,7 @@ public class Mission_Hunt : Mission
 
     public override void StartMission()
     {
+        //Debug.Log("Enemy count: " + LevelGeneration.Instance.getEnemyList().Count);
         foreach (var req in killRequirements)
         {
             req.killedCount = 0;

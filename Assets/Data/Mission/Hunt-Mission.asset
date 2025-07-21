@@ -16,7 +16,10 @@ MonoBehaviour:
   missionDescription: ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
   killRequirements:
   - enemyType: 0
-    amountToKill: 2
+    amountToKill: 1
+    killedCount: 0
+  - enemyType: 1
+    amountToKill: 1
     killedCount: 0
   - enemyType: 2
     amountToKill: 1

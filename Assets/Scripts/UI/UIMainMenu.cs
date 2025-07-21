@@ -24,5 +24,10 @@ public class UIMainMenu : MonoBehaviour
         GameManager.instance.LoadScene("TimeLevel");
         Time.timeScale = 1f; // Reset time scale to normal before switching scenes
     }
+    public void MainMenu()
+    {
+        GameManager.instance.LoadScene("MainMenu");
+        Time.timeScale = 1f; // Reset time scale to normal before switching scenes
+    }
 
 }

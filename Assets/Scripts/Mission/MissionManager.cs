@@ -12,12 +12,20 @@ public class MissionManager : MonoBehaviour
     }
     private void Start()
     {
-        //if (currentMission != null)
-        //{
-        //    Invoke(nameof(StartMission), 2); // Bat dau nhiem vu hien tai neu co
-        //}
-        StartMission(); // Bat dau nhiem vu hien tai neu co
+        StartCoroutine(StartMissionWhenReady());
     }
+    private IEnumerator StartMissionWhenReady()
+    {
+        
+        yield return new WaitForSeconds(0.2f);
+
+        if (currentMission != null)
+        {
+            StartMission();
+        }
+    }
+
+  
     private void Update()
     {
         currentMission?.UpdateMission(); // Cap nhat nhiem vu hien tai neu co
