@@ -25,6 +25,7 @@ public class PlayerHeath : HeathController
         isDead = true; // Dat isDead la true khi chet
         player.ragdoll.RagdollActive(true); // Kich hoat ragdoll khi chet
         player.animator.enabled = false; // Tat Animator de tranh viec nhan vat van hoat dong
+        AudioManager.Instance.StopSFX(0);
         GameManager.instance.GameOver(); // Ket thuc tro choi khi chet
     }
 }

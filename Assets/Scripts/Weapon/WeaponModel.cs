@@ -11,4 +11,8 @@ public class WeaponModel : MonoBehaviour
     public HoldType holdType;
     public Transform gunPoint;
     public Transform holdPont;
+
+    [Header("Weapon SFX")]
+    public AudioSource fireSFX;
+    public AudioSource reloadSFX;
 }

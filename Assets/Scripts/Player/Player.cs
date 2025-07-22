@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public PlayerHeath heath { get; private set; } //read only khong thay doi gia tri
     public Ragdoll ragdoll { get; private set; } //read only khong thay doi gia tri
     public Animator animator { get; private set; } //read only khong thay doi gia tri
+    public Player_SoundSFX soundSFX { get; private set; } //read only khong thay doi gia tri
     public bool controlsEnabled { get; private set; } //kiem soat xem controls co duoc kich hoat hay khong
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
         heath = GetComponent<PlayerHeath>();
         ragdoll = GetComponent<Ragdoll>();
         animator = GetComponentInChildren<Animator>();
+        soundSFX = GetComponent<Player_SoundSFX>();
     }
     private void OnEnable()
     {

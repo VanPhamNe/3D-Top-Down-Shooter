@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
     [SerializeField] private AudioSource[] bgm;
+    [SerializeField] private AudioSource[] sfx; 
     private int bgmIndex;
     private string currentScene;
     private void Awake()
@@ -62,5 +63,22 @@ public class AudioManager : MonoBehaviour
         {
             bgm[i].Stop();
         }
+    }
+    public void PlaySFX(int index)
+    {
+        if (index < 0 || index >= sfx.Length)
+        {
+            return;
+        }
+        sfx[index].Play();
+    }
+
+    public void StopSFX(int index)
+    {
+        if (index < 0 || index >= sfx.Length)
+        {
+            return;
+        }
+        sfx[index].Stop();
     }
 }

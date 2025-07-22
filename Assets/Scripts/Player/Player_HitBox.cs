@@ -13,6 +13,7 @@ public class Player_HitBox : HitBox
     }
     public override void TakeDamage(int damage)
     {
+        AudioManager.Instance.PlaySFX(0);
         int newDamage = Mathf.RoundToInt(damage * damageMultiplier); // Apply damage multiplier
         player.heath.ReduceHealth(newDamage); // Assuming ReduceHealth is a method in Player's health management script
     }

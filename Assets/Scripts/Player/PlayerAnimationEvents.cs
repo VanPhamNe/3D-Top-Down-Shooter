@@ -14,6 +14,7 @@ public class PlayerAnimationEvents : MonoBehaviour
     public void ReloadOver()
     {
         weaponVisualController.MaxWeightRigWeight(); //bat rig khi bat animation reload xong
+        weaponVisualController.GetCurrentWeaponModel().reloadSFX.Stop(); //tat sound nap dan
         weaponController.GetCurrentWeapon().ReloadBullet(); //nap dan cho vu khi hien tai
         weaponController.SetWeaponReady(true); //dat trang thai vu khi la san sang
         weaponController.UpdateWeaponUI(); //cap nhat UI vu khi

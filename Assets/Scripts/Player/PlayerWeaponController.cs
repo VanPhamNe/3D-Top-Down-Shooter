@@ -12,7 +12,7 @@ public class PlayerWeaponController : MonoBehaviour
     //[SerializeField] private LayerMask whatIsAlly;
     [Header("Bullet")]
     [SerializeField] private GameObject bulletPrefab; // Prefab cua dan
-    [SerializeField] private float bulletSpeed ; // Toc do dan
+    [SerializeField] private float bulletSpeed; // Toc do dan
     //[SerializeField] private Transform gunPoint; // Vi tri dan duoc tao
     [SerializeField] private float bulletImpactForce = 100f; // Luc tac dong cua dan khi cham vao vat the
 
@@ -55,7 +55,7 @@ public class PlayerWeaponController : MonoBehaviour
     private void InputEvents()
     {
         PlayerControls playerControls = player.controls; // Lay tham chieu den PlayerControls script
-        player.controls.Character.Fire.performed += ctx => isShooting=true; // Dang ky su kien khi nguoi choi bam nut Fire
+        player.controls.Character.Fire.performed += ctx => isShooting = true; // Dang ky su kien khi nguoi choi bam nut Fire
         player.controls.Character.Fire.canceled += ctx => isShooting = false; // Dang ky su kien khi nguoi choi tha nut Fire
         player.controls.Character.EquipSlot1.performed += ctx => EquipWeapon(0); // Dang ky su kien khi nguoi choi bam nut EquipWeapon
         player.controls.Character.EquipSlot2.performed += ctx => EquipWeapon(1); // Dang ky su kien khi nguoi choi bam nut EquipWeapon
@@ -63,7 +63,7 @@ public class PlayerWeaponController : MonoBehaviour
         player.controls.Character.Drop.performed += ctx => DropWeapon(); // Dang ky su kien khi nguoi choi bam nut Drop
         player.controls.Character.Reload.performed += ctx =>
         {
-            if (currentWeapon.canReload()&& IsWeaponReady())
+            if (currentWeapon.canReload() && IsWeaponReady())
             {
                 Reload();
             }
@@ -75,11 +75,12 @@ public class PlayerWeaponController : MonoBehaviour
     {
         SetWeaponReady(false); // Dat trang thai vu khi la khong san sang
         player.weaponVisual.PlayReloadAnimation(); // Choi animation nap dan
+        player.weaponVisual.GetCurrentWeaponModel().reloadSFX.Play(); // Phat am thanh nap dan
     }
 
     private void EquipWeapon(int i)
     {
-        if(i >= weaponSlot.Count) // Kiem tra xem chi so vu khi co hop le khong
+        if (i >= weaponSlot.Count) // Kiem tra xem chi so vu khi co hop le khong
         {
             Debug.Log("Weapon slot index out of range!"); // In ra thong bao neu chi so vu khi khong hop le
             return; // Thoat khoi ham
@@ -109,19 +110,19 @@ public class PlayerWeaponController : MonoBehaviour
 
     private void CreateWeaponOnGround()
     {
-        GameObject dropWeapon = ObjectPooling.Instance.GetObject(weaponPickupPrefabs,transform); // Lay prefab vu khi pickup tu ObjectPooling
+        GameObject dropWeapon = ObjectPooling.Instance.GetObject(weaponPickupPrefabs, transform); // Lay prefab vu khi pickup tu ObjectPooling
         dropWeapon.GetComponent<PickupWeapon>().SetupPickupWeapon(currentWeapon, transform); // Dat vu khi pickup moi voi vu khi hien tai va vi tri cua nguoi choi
     }
 
     public void PickupWeapon(Weapon newweapon)
     {
-        if(HasWeaponInSlot(newweapon.weaponType) != null) //Kiem tra xem kho vu khi da co vu khi cung loai chua
+        if (HasWeaponInSlot(newweapon.weaponType) != null) //Kiem tra xem kho vu khi da co vu khi cung loai chua
         {
             HasWeaponInSlot(newweapon.weaponType).totalBullet += newweapon.totalBullet; // Neu da co, cong them so luong dan toi da vao vu khi da co
             return;
         }
         // Neu kho vu khi da day va loai vu khi moi khac voi loai vu khi hien tai
-        if (weaponSlot.Count >= maxSlot && newweapon.weaponType != currentWeapon.weaponType) 
+        if (weaponSlot.Count >= maxSlot && newweapon.weaponType != currentWeapon.weaponType)
         {
             //Debug.Log("Inventory full!"); // In ra thong bao
             int weaponIndex = weaponSlot.IndexOf(currentWeapon); // Tim chi so cua vu khi hien tai trong kho
@@ -130,7 +131,7 @@ public class PlayerWeaponController : MonoBehaviour
             EquipWeapon(weaponIndex); // Chon vu khi moi lam vu khi hien tai
             return; // Thoat khoi ham
         }
-        
+
         weaponSlot.Add(newweapon); // Them vu khi moi vao kho vu khi
         player.weaponVisual.SwitchOnBackupWeaponModels(); // Bat model vu khi backup
         UpdateWeaponUI(); // Cap nhat giao dien vu khi
@@ -138,7 +139,7 @@ public class PlayerWeaponController : MonoBehaviour
     }
     private void EquipStartingWeapon()
     {
-       
+
         weaponSlot[0] = new Weapon(defaultWeaponData); // Dat vu khi dau tien trong kho la Pistol
         EquipWeapon(0); // Chon vu khi dau tien trong kho lam vu khi hien tai
     }
@@ -146,7 +147,13 @@ public class PlayerWeaponController : MonoBehaviour
     {
         return weaponSlot.Count <= 1; // Tra ve true neu kho vu khi chi co 1 vu khi
     }
-    public void SetWeaponReady(bool ready) => weaponReady = ready; // Dat trang thai san sang cua vu khi
+    public void SetWeaponReady(bool ready)  {
+        weaponReady = ready; // Dat trang thai san sang cua vu khi
+        if (ready)
+        {
+            player.soundSFX.weaponReady.Play(); // Phat am thanh khi dat trang thai vu khi
+        }
+    }
     public bool IsWeaponReady() => weaponReady; // Lay trang thai san sang cua vu khi
     #endregion
     private void Shoot()
@@ -188,6 +195,7 @@ public class PlayerWeaponController : MonoBehaviour
     private void FireSingleBullet()
     {
         currentWeapon.bulletInMagazines--; // Giam so luong dan trong hop dan di 1 khi ban thanh cong
+        player.weaponVisual.GetCurrentWeaponModel().fireSFX.Play(); // Phat am thanh ban sung
         UpdateWeaponUI(); // Cap nhat giao dien vu khi
         GameObject newBullet = ObjectPooling.Instance.GetObject(bulletPrefab,GetGunPoint()); // Lay dan tu ObjectPooling
         //Instantiate(bulletPrefab, gunPoint.position, Quaternion.LookRotation(gunPoint.forward)); // Tao dan moi tai vi tri gunPoint

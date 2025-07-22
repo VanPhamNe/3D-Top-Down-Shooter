@@ -73,8 +73,9 @@ public class Enemy_Melee : Enemy
     {
         base.Update();
         stateMachine.currentState.Update();
-       
+
         MeleeAttackCheck(currenWeapon.damagePoint,currenWeapon.attackRadius,meleeAttackVfx,attackData.attackDamage); // Check for melee attacks
+            
 
 
     }

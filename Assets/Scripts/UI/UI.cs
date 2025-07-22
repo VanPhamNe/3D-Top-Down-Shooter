@@ -11,7 +11,6 @@ public class UI : MonoBehaviour
     public GameObject[] uiElements;
     public UI_GameOver gameOverUI;
     [SerializeField] private Image fadeimage;
-    public GameObject victorySceneUI;
 
     private void Awake()
     {
@@ -35,6 +34,11 @@ public class UI : MonoBehaviour
     }
     public void PauseSwitch()
     {
+        if (gameOverUI.gameObject.activeSelf)
+        {
+            Debug.Log("Cannot pause while Game Over UI is active.");
+            return;
+        }
         bool gamePaused = pauseUI.activeSelf;
         if(gamePaused)
         {
@@ -51,8 +55,8 @@ public class UI : MonoBehaviour
         }
     }
     public void GoToMainMenu()
-    {
-        Time.timeScale = 1f; // Reset time scale to normal before switching scenes
+    { 
+        Debug.Log("Go to Main Menu");
         GameManager.instance.LoadScene("MainMenu");
     }
     public void GoToEndScene()
@@ -61,6 +65,7 @@ public class UI : MonoBehaviour
     }
     public void RestartLevel()
     {
+        Debug.Log("Restart");
         GameManager.instance.RestartScene(); // Restart the current level
       
     }
@@ -98,5 +103,17 @@ public class UI : MonoBehaviour
     {
         GoToEndScene();
     }
-
+    [ContextMenu("Assign Audio Button")]
+    public void AssignAudioButton()
+    {
+        UI_Button[] buttons = FindObjectsOfType<UI_Button>(true);
+        foreach (var button in buttons)
+        {
+            button.AssignAudioSource();
+        }
+    }
+    public void TestClick()
+    {
+        Debug.Log("Test button clicked");
+    }
 }

@@ -29,5 +29,14 @@ public class UIMainMenu : MonoBehaviour
         GameManager.instance.LoadScene("MainMenu");
         Time.timeScale = 1f; // Reset time scale to normal before switching scenes
     }
+    [ContextMenu("Assign Audio Button")]
+    public void AssignAudioButton()
+    {
+        UI_Button[] buttons = FindObjectsOfType<UI_Button>(true);
+        foreach (var button in buttons)
+        {
+            button.AssignAudioSource();
+        }
+    }
 
 }

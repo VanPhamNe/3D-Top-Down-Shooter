@@ -15,16 +15,21 @@ public class PlayerMove : MonoBehaviour
     private float speed;
     private float verticalVelocity;
     private bool isRunning;
-    
+
+    private AudioSource walkSFX;
+    private AudioSource runSFX;
     
 
     private void Start()
     {
-       
+        player = GetComponent<Player>(); //lay tham chieu den Player script  
         characterController = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
+    
         speed = walkSpeed; //mac dinh toc do di chuyen la toc do di bo
-        player = GetComponent<Player>(); //lay tham chieu den Player script
+    
+        walkSFX = player.soundSFX.walkSFX; //lay tham chieu den walkSFX trong Player_SoundSFX script
+        runSFX = player.soundSFX.runSFX; //lay tham chieu den runSFX trong Player_SoundSFX script
         InputEvents();
      
     }
@@ -65,9 +70,38 @@ public class PlayerMove : MonoBehaviour
         ApplyGravity();
         if (moveDirection.magnitude > 0)
         {
+            PlayFootstepsSound();
             characterController.Move(moveDirection * Time.deltaTime * speed);
         }
+        else
+        {
+            StopFootstepSound(); // dung am thanh chan khi khong di chuyen
+        }
     }
+
+    private void PlayFootstepsSound()
+    {
+        if (isRunning)
+        {
+            if (runSFX.isPlaying == false)
+            {
+                runSFX.Play();
+            }
+            else
+            {
+                if (walkSFX.isPlaying == false)
+                {
+                    walkSFX.Play();
+                }
+            }
+        }
+    }
+    private void StopFootstepSound()
+    {
+        walkSFX.Stop();
+        runSFX.Stop();
+    }
+
     private void ApplyGravity()
     {
         if(!characterController.isGrounded)
@@ -86,7 +120,12 @@ public class PlayerMove : MonoBehaviour
     {
         controls = player.controls;
         controls.Character.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        controls.Character.Movement.canceled += ctx => moveInput = Vector2.zero;
+        controls.Character.Movement.canceled += ctx =>
+        {
+            StopFootstepSound(); // dung am thanh chan khi khong di chuyen
+            moveInput = Vector2.zero; //khi nhan phim roi thi set lai input ve 0
+          
+        };
   
         controls.Character.Run.performed += ctx =>
         {

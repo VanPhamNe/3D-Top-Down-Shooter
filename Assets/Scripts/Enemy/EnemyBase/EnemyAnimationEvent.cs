@@ -28,7 +28,11 @@ public class EnemyAnimationEvent : MonoBehaviour
         enemyBoss?.JumpImpact();
     }
     public void BeginMeleeAttackCheck() {
+       
         enemy?.EnableAttackCheck(true); // Call the BeginMeleeAttackCheck method on the Enemy_Melee component
+
+        AudioManager.Instance.PlaySFX(1); // Play the melee attack sound effec
+
     }
     public void EndMeleeAttackCheck()
     {

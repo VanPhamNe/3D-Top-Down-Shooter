@@ -16,12 +16,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-    public void RestartScene() { 
-         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    public void RestartScene() {
+    
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void GameOver()
     {
         UI.Instance.ShowGameOverUI(); // Show Game Over UI with a message
+
     }
     public void GameComplete()
     {
