@@ -14,6 +14,7 @@ public class EnemyShield : MonoBehaviour,IDamagable
     }
     public void ReduceDurability(int damage)
     {
+        AudioManager.Instance.PlaySFX(3);
         durability -= damage;
         if (durability <= 0)
         {

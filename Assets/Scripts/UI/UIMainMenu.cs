@@ -5,6 +5,11 @@ using UnityEngine;
 public class UIMainMenu : MonoBehaviour
 {
     public GameObject[] uiElements;
+    public UI_Settings settingsUI {  get; private set; }
+    private void Awake()
+    {
+        settingsUI = GetComponentInChildren<UI_Settings>(true);
+    }
     public void SwitchTo(GameObject gameObject)
     {
         foreach (GameObject uiElement in uiElements)
@@ -12,6 +17,10 @@ public class UIMainMenu : MonoBehaviour
             uiElement.SetActive(false);
         }
         gameObject.SetActive(true);
+        if(gameObject == settingsUI.gameObject)
+        {
+            settingsUI.LoadValues();
+        }
     }
     public void ChangeToHuntLevel()
     {

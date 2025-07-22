@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public void GameComplete()
     {
         isGameComplete = true;
+        AudioManager.Instance.PlaySFX(7);
         UI.Instance.ShowVictoryScene();
         ControlsController.Instance.controls.Character.Disable();
         player.heath.currentHealth += 99999999;

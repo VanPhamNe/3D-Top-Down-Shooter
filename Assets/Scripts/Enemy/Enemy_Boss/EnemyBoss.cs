@@ -95,6 +95,7 @@ public class EnemyBoss : Enemy
     }
     public void ActiveFlameThrower(bool active)
     {
+        AudioManager.Instance.PlaySFX(4);
         flameThrowerActive = active; // Set the flame thrower active state
         if (!active)
         {
@@ -114,6 +115,7 @@ public class EnemyBoss : Enemy
     }
     public void ActiveHammerAbility()
     {
+        AudioManager.Instance.PlaySFX(5);
         GameObject newActive = ObjectPooling.Instance.GetObject(hammerFxPrefab, impactPoint);
         ObjectPooling.Instance.ReturnObject(newActive, 1); // Return the object to the pool after 1 second
         DamageArea(damagePoints[0].position, hammerCheckRadius,hammerDamage);
@@ -159,6 +161,7 @@ public class EnemyBoss : Enemy
     public void SetAbilityOnCooldown() => lastAbilityTime = Time.time; // Set the last ability time to the current time to start the cooldown
     public void JumpImpact()
     {
+        AudioManager.Instance.PlaySFX(6);
         Transform impactPoint = this.impactPoint;
         if (impactPoint == null) // Check if the impact point is set
         {

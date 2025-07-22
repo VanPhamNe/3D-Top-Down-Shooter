@@ -100,6 +100,7 @@ public class EnemyRange : Enemy
     public void FireSingleBullet()
     {
         Debug.Log("FireSingleBullet Called");
+        AudioManager.Instance.PlaySFX(3);
         anim.SetTrigger("Shoot");
         Vector3 bulletDir = (aim.position - gunPoint.position).normalized; // Calculate the direction to the player
         GameObject newbullet = ObjectPooling.Instance.GetObject(bulletPrefab,gunPoint); // Get a bullet from the object pool

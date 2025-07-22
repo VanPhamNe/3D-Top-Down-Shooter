@@ -48,6 +48,9 @@ public class AudioManager : MonoBehaviour
         {
             PlayBGM(2);
         }
+        else {
+            StopAllBGM();
+        }
     }
 
 

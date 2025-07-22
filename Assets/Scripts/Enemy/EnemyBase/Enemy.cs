@@ -182,6 +182,7 @@ public class Enemy : MonoBehaviour
     }
     public virtual void Death()
     {
+        AudioManager.Instance.PlaySFX(2);
         MissionObjectHuntTarget huntTarget = GetComponent<MissionObjectHuntTarget>(); // Kiem tra xem Enemy co la muc tieu cua nhiem vu hay khong   
         huntTarget?.InvokeInTargetKill(); // Neu Enemy la muc tieu cua nhiem vu, goi ham InvokeInTargetKill de thong bao nhiem vu da hoan thanh
     }

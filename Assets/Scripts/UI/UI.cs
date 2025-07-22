@@ -11,18 +11,24 @@ public class UI : MonoBehaviour
     public GameObject[] uiElements;
     public UI_GameOver gameOverUI;
     [SerializeField] private Image fadeimage;
+    public UI_Settings settingsUI { get; private set; }
 
     private void Awake()
     {
         Instance = this;
         ingameUI = GetComponentInChildren<UI_Ingame>(true);
         gameOverUI = GetComponentInChildren<UI_GameOver>(true);
+        settingsUI = GetComponentInChildren<UI_Settings>(true);
     }
     private void Start()
     {
         Time.timeScale = 1f; // Ensure the game starts with normal time scale
         AssignUI(); // Assign UI controls
         StartCoroutine(ChangeImageAlpha(0, 1.5f, null));
+        if (settingsUI != null)
+        {
+            settingsUI.LoadValues();
+        }
     }
     public void SwitchTo(GameObject gameObject)
     {

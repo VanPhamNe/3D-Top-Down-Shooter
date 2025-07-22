@@ -110,6 +110,7 @@ public class Enemy_Melee : Enemy
     public override void Death()
     {
         base.Death();
+        AudioManager.Instance.PlaySFX(2);
         if(stateMachine.currentState != deadState)
         {
             stateMachine.ChangeState(deadState); // Change to dead state when the enemy dies
