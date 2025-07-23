@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4060255456652520495
 Transform:
   m_ObjectHideFlags: 0
@@ -52,21 +52,36 @@ MonoBehaviour:
   ammoBoxType: 1
   smallBoxAmmo:
   - weaponType: 0
+    minAmount: 40
+    maxAmount: 50
+  - weaponType: 1
+    minAmount: 40
+    maxAmount: 50
+  - weaponType: 2
+    minAmount: 40
+    maxAmount: 50
+  - weaponType: 3
+    minAmount: 40
+    maxAmount: 50
+  - weaponType: 4
+    minAmount: 40
+    maxAmount: 50
+  bigBoxAmmo:
+  - weaponType: 0
+    minAmount: 40
+    maxAmount: 60
+  - weaponType: 1
+    minAmount: 40
+    maxAmount: 60
+  - weaponType: 2
+    minAmount: 40
+    maxAmount: 60
+  - weaponType: 3
     minAmount: 20
     maxAmount: 40
-  - weaponType: 1
-    minAmount: 18
-    maxAmount: 41
-  - weaponType: 3
-    minAmount: 18
-    maxAmount: 33
-  bigBoxAmmo:
-  - weaponType: 2
-    minAmount: 21
-    maxAmount: 60
   - weaponType: 4
-    minAmount: 22
-    maxAmount: 50
+    minAmount: 40
+    maxAmount: 60
   boxModel:
   - {fileID: 8276617408233625427}
   - {fileID: 1569382076460757515}
