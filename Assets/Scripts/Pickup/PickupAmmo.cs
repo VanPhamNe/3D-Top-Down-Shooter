@@ -54,6 +54,7 @@ public class PickupAmmo : Interacable
             Weapon weapon = playerWeaponController.HasWeaponInSlot(ammoData.weaponType); //Lay vu khi theo loai
             AddBulletToWeapon(weapon, GetBulletAmount(ammoData)); //Them dan vao vu khi
         }
+        playerWeaponController.UpdateWeaponUI();
         ObjectPooling.Instance.ReturnObject(gameObject); //Tra ve doi tuong vao object pool
     }
     private void AddBulletToWeapon(Weapon weapon, int amount)

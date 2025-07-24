@@ -4612,6 +4612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: first_aid_kit
       objectReference: {fileID: 0}
+    - target: {fileID: 622940598303195721, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
+      propertyPath: healAmount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6527372046998238441, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.91
@@ -12063,6 +12067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: first_aid_kit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 622940598303195721, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
+      propertyPath: healAmount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6527372046998238441, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.9
@@ -15588,6 +15596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: first_aid_kit (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 622940598303195721, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
+      propertyPath: healAmount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6527372046998238441, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
       propertyPath: m_LocalPosition.x
       value: -46.78
@@ -18897,6 +18909,10 @@ PrefabInstance:
     - target: {fileID: 317979096051090662, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
       propertyPath: m_Name
       value: first_aid_kit (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 622940598303195721, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
+      propertyPath: healAmount
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6527372046998238441, guid: 16bbb7faabbdb004c9b869b4c5619a75, type: 3}
       propertyPath: m_LocalPosition.x

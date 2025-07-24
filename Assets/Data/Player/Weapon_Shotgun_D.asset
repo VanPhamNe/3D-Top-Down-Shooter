@@ -23,7 +23,7 @@ MonoBehaviour:
   reloadSpeed: 2
   equipSpeed: 1
   gunDistance: 25
-  cameraDistance: 5
+  cameraDistance: 6
   burstModeBulletPerShot: 0
   burstModeFireRate: 0
   burstFireDelay: 0.1
@@ -31,6 +31,6 @@ MonoBehaviour:
   burstModeActive: 0
   bulletInMagazines: 20
   magazineCapacity: 20
-  totalBullet: 99999999
+  totalBullet: 50
   bulletDamage: 20
   weaponIcon: {fileID: 1123339388, guid: 3477fe9a26e0faa42b5a9b5b258229c1, type: 3}

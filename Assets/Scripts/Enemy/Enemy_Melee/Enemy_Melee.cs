@@ -49,6 +49,7 @@ public class Enemy_Melee : Enemy
     [Header("Shield")]
     public Transform shieldTransform; // Reference to the player transform
     public int shieldDurability;
+    public bool isDead { get; private set; }
 
     protected override void Awake()
     {
@@ -109,6 +110,9 @@ public class Enemy_Melee : Enemy
     }
     public override void Death()
     {
+        if (isDead) return;
+
+        isDead = true;
         base.Death();
         if(stateMachine.currentState != deadState)
         {

@@ -18,6 +18,10 @@ public class DeadState_Melee : EnemyState
         enemy.anim.enabled = false; // Disable animation when dead
         enemy.agent.isStopped = true; // Stop the NavMeshAgent when dead
         enemy.ragdoll.RagdollActive(true); // Activate ragdoll physics
+        if (enemy.shieldTransform != null)
+        {
+            enemy.shieldTransform.gameObject.SetActive(false);
+        }
     }
 
     public override void Exit()
