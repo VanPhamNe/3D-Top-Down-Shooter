@@ -47,5 +47,10 @@ public class UIMainMenu : MonoBehaviour
             button.AssignAudioSource();
         }
     }
+    public void QuiteGame()
+    {
+        Debug.Log("Exit");
+        Application.Quit();
+    }
 
 }

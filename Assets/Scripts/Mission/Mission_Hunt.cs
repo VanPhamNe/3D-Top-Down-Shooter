@@ -70,6 +70,7 @@ public class Mission_Hunt : Mission
         {
             req.killedCount = 0;
         }
+        MissionObjectHuntTarget.OnTargetKilled -= TargetEliminated;
         MissionObjectHuntTarget.OnTargetKilled += TargetEliminated;
 
         foreach (var req in killRequirements)
@@ -82,13 +83,13 @@ public class Mission_Hunt : Mission
                     validEnemies.Add(enemy);
                 }
             }
-            for (int i = 0; i < req.amountToKill && validEnemies.Count > 0; i++)
+            foreach (Enemy enemy in validEnemies)
             {
-                int randomIndex = Random.Range(0, validEnemies.Count);
-                //validEnemies[randomIndex].AddComponent<MissionObjectHuntTarget>();
-                var target = validEnemies[randomIndex].AddComponent<MissionObjectHuntTarget>();
-                target.enemyType = req.enemyType;
-                validEnemies.RemoveAt(randomIndex);
+                if (enemy.GetComponent<MissionObjectHuntTarget>() == null)
+                {
+                    var target = enemy.gameObject.AddComponent<MissionObjectHuntTarget>();
+                    target.enemyType = req.enemyType;
+                }
             }
         }
         GetEnemyKillUI();

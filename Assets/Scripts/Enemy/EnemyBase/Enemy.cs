@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float aggressiveRange; // khoang cach Enemy co the tan cong toi Player
     public EnemyType enemyType; // Kieu Enemy, co the la Melee, Range hoac Boss
     public Vector3 initialPosition;
+    private bool isDead = false;
 
     public bool inBattleMode { get; private set; }
     public LayerMask whatIsAlly;
@@ -182,6 +183,8 @@ public class Enemy : MonoBehaviour
     }
     public virtual void Death()
     {
+        if (isDead) return; 
+        isDead = true;
         AudioManager.Instance.PlaySFX(2);
         MissionObjectHuntTarget huntTarget = GetComponent<MissionObjectHuntTarget>(); // Kiem tra xem Enemy co la muc tieu cua nhiem vu hay khong   
         huntTarget?.InvokeInTargetKill(); // Neu Enemy la muc tieu cua nhiem vu, goi ham InvokeInTargetKill de thong bao nhiem vu da hoan thanh

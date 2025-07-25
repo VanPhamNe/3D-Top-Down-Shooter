@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
         {
             PlayBGM(0);
         }
-        else if (sceneName == "HuntLevel")
+        else if (sceneName == "HuntLevel"||sceneName == "TimeLevel")
         {
             PlayBGM(2);
         }

@@ -5495,7 +5495,7 @@ Transform:
   m_GameObject: {fileID: 3900607889718895949}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.53, y: 0.1, z: 214.9}
+  m_LocalPosition: {x: -16.53, y: 0.59, z: 214.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10392,8 +10392,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.7105334, y: 0.12684865, z: 2.5278473}
-  m_Center: {x: 0.01326406, y: 0.045451023, z: 0.1818161}
+  m_Size: {x: 1.2902431, y: 0.12684865, z: 1.4237976}
+  m_Center: {x: 0.021100044, y: 0.045451023, z: 0.035247803}
 --- !u!1 &3983981823958778475
 GameObject:
   m_ObjectHideFlags: 0
@@ -50066,6 +50066,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.06535563
       objectReference: {fileID: 0}
+    - target: {fileID: 7133218042506704813, guid: 51212b8f361014d49a04ee3826f4aae6, type: 3}
+      propertyPath: maxHealth
+      value: 3500
+      objectReference: {fileID: 0}
     - target: {fileID: 7795328911654141069, guid: 51212b8f361014d49a04ee3826f4aae6, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.37979025
@@ -52489,6 +52493,10 @@ PrefabInstance:
     - target: {fileID: 8934292206659146196, guid: 9dca0abf9a754cc48b4169e078ee2f3c, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.0000009355135
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971904012328039017, guid: 9dca0abf9a754cc48b4169e078ee2f3c, type: 3}
+      propertyPath: maxHealth
+      value: 3500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
