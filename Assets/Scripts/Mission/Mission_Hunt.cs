@@ -97,7 +97,7 @@ public class Mission_Hunt : Mission
 
     private void GetEnemyKillUI()
     {
-        string missionText = "Tieu diet muc tieu";
+        string missionText = "Eliminate the enemy and find an escape";
         string description = "";
         foreach (var req in killRequirements)
         {

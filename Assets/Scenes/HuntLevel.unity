@@ -3325,7 +3325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 681.54443, y: 322}
+  m_AnchoredPosition: {x: 706, y: 254}
   m_SizeDelta: {x: 338.4773, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &619564048
@@ -7450,7 +7450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1383066745
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7467,7 +7467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 18, y: -25}
+  m_AnchoredPosition: {x: 9, y: -7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383066746
@@ -7490,7 +7490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dadadasdasdasdasdasda
+  m_text: PAUSE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d4c4e05f7d8b56542a1dce510e21d3e7, type: 2}
   m_sharedMaterial: {fileID: -3459236091167403587, guid: d4c4e05f7d8b56542a1dce510e21d3e7, type: 2}
@@ -7524,8 +7524,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7696,7 +7696,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshSurface: {fileID: 2107783063}
-  levelParts: []
+  levelParts:
+  - {fileID: 8497297395678934823, guid: 826bed76182e25d4aba233dd47efe942, type: 3}
+  - {fileID: 4100335498966914076, guid: 4155eeb750fdfea4e924085a15a28e6e, type: 3}
   lastLevel: {fileID: 6652635307632920635, guid: 15223c44cd75a994694ea69e674cc2db, type: 3}
   nextSnapPoint: {fileID: 8855477028972162192}
   generatedParts: []
@@ -8144,7 +8146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d49d9c01fd97d47b7846b44d140de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 300
   currentHealth: 0
 --- !u!114 &1534915754
 MonoBehaviour:
@@ -9912,7 +9914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce27ee9212417345a5fc499727dc41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMission: {fileID: 11400000, guid: 3cc0086c358176349930c3b33c7999e6, type: 2}
+  currentMission: {fileID: 11400000, guid: dacf03cef9e4da84585953f1e3ed9e52, type: 2}
 --- !u!4 &2096152296
 Transform:
   m_ObjectHideFlags: 0

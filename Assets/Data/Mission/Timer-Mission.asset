@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Timer-Mission
   m_EditorClassIdentifier: 
   missionName: Run For Life
-  missionDescription: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  missionDescription: Escape within the given time before the area explodes.
   time: 600

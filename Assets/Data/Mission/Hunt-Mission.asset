@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Hunt-Mission
   m_EditorClassIdentifier: 
   missionName: Hunt Enemy
-  missionDescription: ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+  missionDescription: Destroy a certain number of enemies to launch the plane.
   killRequirements:
   - enemyType: 0
-    amountToKill: 1
+    amountToKill: 30
     killedCount: 0
   - enemyType: 1
-    amountToKill: 1
+    amountToKill: 15
     killedCount: 0
   - enemyType: 2
-    amountToKill: 1
+    amountToKill: 2
     killedCount: 0
